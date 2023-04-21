@@ -19,14 +19,12 @@ export default function DefaultLayout() {
         });
     };
 
-    const Component = () => {
-    useEffect(() => {
+    /*useEffect(() => {
         axiosClient.get("/user").then(({ data }) => {
             setUser(data);
         });
-    }, []);}
+    }, []);*/
 
-    Component()
     return (
         <div id="defaultLayout">
             <aside>
