@@ -102,6 +102,7 @@ export default function CustomerList() {
                                                     <img
                                                         width="50px"
                                                         src={`http://localhost:8000/storage/customer/image/${row.image}`}
+                                                        alt="customer"
                                                     />
                                                 </td>
                                                 <td>{row.address}</td>

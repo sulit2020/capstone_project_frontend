@@ -19,12 +19,14 @@ export default function DefaultLayout() {
         });
     };
 
+    const Component = () => {
     useEffect(() => {
         axiosClient.get("/user").then(({ data }) => {
             setUser(data);
         });
-    }, []);
+    }, []);}
 
+    Component()
     return (
         <div id="defaultLayout">
             <aside>
@@ -34,7 +36,7 @@ export default function DefaultLayout() {
                 </Link>
                 <br />
                 <Link to="/users">
-                    <span class="material-icons-outlined">account_circle</span> Users
+                    <span className="material-icons-outlined">account_circle</span> Users
                 </Link>
                 <br />
                 <Link to="/products">
@@ -42,7 +44,7 @@ export default function DefaultLayout() {
                     Products
                 </Link>
                 <br />
-                <Link to="/customers"><span class="material-icons-outlined">group</span> Customers</Link>
+                <Link to="/customers"><span className="material-icons-outlined">group</span> Customers</Link>
                 <br />
                 <Link to="/orders">
                     <span className="material-icons-outlined">
