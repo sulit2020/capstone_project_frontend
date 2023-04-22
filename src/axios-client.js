@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: `https://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api`
+  baseURL: `http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api`
 })
 
 axiosClient.interceptors.request.use((config) => {

@@ -24,7 +24,7 @@ export default function EditProduct() {
   },[])
 
   const fetchProduct = async () => {
-    await axios.get(`https://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products/${id}`).then(({data})=>{
+    await axios.get(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products/${id}`).then(({data})=>{
       const { title, description } = data.product
       setTitle(title)
       setDescription(description)
@@ -53,7 +53,7 @@ export default function EditProduct() {
       formData.append('image', image)
     }
 
-    await axios.post(`https://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products/${id}`, formData).then(({data})=>{
+    await axios.post(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products/${id}`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message
