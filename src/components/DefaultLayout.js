@@ -1,7 +1,6 @@
 import { Link, Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
 import axiosClient from "../axios-client.js";
-import { useEffect } from "react";
 
 export default function DefaultLayout() {
     const { user, token, setUser, setToken, notification } = useStateContext();
@@ -18,12 +17,6 @@ export default function DefaultLayout() {
             setToken(null);
         });
     };
-
-    /*useEffect(() => {
-        axiosClient.get("/user").then(({ data }) => {
-            setUser(data);
-        });
-    }, []);*/
 
     return (
         <div id="defaultLayout">
