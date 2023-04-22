@@ -13,7 +13,7 @@ export default function CustomerList() {
 
     const fetchCustomers = async () => {
         await axios
-            .get(`http://localhost:8000/api/customers`)
+            .get(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/customers`)
             .then(({ data }) => {
                 setCustomers(data);
             });
@@ -37,7 +37,7 @@ export default function CustomerList() {
         }
 
         await axios
-            .delete(`http://localhost:8000/api/customers/${id}`)
+            .delete(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/customers/${id}`)
             .then(({ data }) => {
                 Swal.fire({
                     icon: "success",
@@ -101,7 +101,7 @@ export default function CustomerList() {
                                                 <td>
                                                     <img
                                                         width="50px"
-                                                        src={`http://localhost:8000/storage/customer/image/${row.image}`}
+                                                        src={`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/storage/customer/image/${row.image}`}
                                                         alt="customer"
                                                     />
                                                 </td>
