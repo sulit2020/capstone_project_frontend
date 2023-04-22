@@ -34,7 +34,7 @@ export default function CreateProduct() {
 
 
 
-    await axios.post(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products`, formData).then(({data})=>{
+    await axios.post(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products/`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message
