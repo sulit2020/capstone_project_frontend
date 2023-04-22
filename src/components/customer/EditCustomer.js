@@ -22,7 +22,7 @@ export default function EditCustomer() {
   useEffect(() => {
     const fetchCustomer = async () => {
       await axios
-        .get(`http://localhost:8000/api/customers/${id}`)
+        .get(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/customers/${id}`)
         .then(({ data }) => {
           const { firstname, lastname } = data.customer;
           setFirstname(firstname);
@@ -56,7 +56,7 @@ export default function EditCustomer() {
     }
 
     await axios
-      .post(`http://localhost:8000/api/customers/${id}`, formData)
+      .post(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/customers/${id}`, formData)
       .then(({ data }) => {
         Swal.fire({
           icon: "success",

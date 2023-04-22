@@ -24,7 +24,7 @@ export default function EditProduct() {
   },[])
 
   const fetchProduct = async () => {
-    await axios.get(`http://localhost:8000/api/products/${id}`).then(({data})=>{
+    await axios.get(`http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api/products/${id}`).then(({data})=>{
       const { title, description } = data.product
       setTitle(title)
       setDescription(description)
