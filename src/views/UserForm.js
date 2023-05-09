@@ -17,7 +17,7 @@ export default function UserForm() {
   const [loading, setLoading] = useState(false)
   const {setNotification} = useStateContext()
 
-  if (id) {
+  /*if (id) {
     useEffect(() => {
       setLoading(true)
       axiosClient.get(`/users/${id}`)
@@ -29,7 +29,7 @@ export default function UserForm() {
           setLoading(false)
         })
     }, [])
-  }
+  }*/
 
   const onSubmit = ev => {
     ev.preventDefault()
