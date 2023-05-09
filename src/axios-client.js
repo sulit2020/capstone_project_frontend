@@ -1,7 +1,8 @@
 import axios from "axios";
+import {useStateContext} from "./context/ContextProvider";
 
 const axiosClient = axios.create({
-  baseURL: `http://mp3project-env-3.eba-uztumfpa.ap-southeast-1.elasticbeanstalk.com/api`
+  baseURL: `https://api.jeabcesewil.com/api`
 })
 
 axiosClient.interceptors.request.use((config) => {
