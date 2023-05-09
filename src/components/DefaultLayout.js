@@ -1,6 +1,7 @@
 import { Link, Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
 import axiosClient from "../axios-client.js";
+import { useEffect } from "react";
 
 export default function DefaultLayout() {
     const { user, token, setUser, setToken, notification } = useStateContext();
@@ -18,6 +19,12 @@ export default function DefaultLayout() {
         });
     };
 
+    useEffect(() => {
+        axiosClient.get("/user").then(({ data }) => {
+            setUser(data);
+        });
+    }, []);
+
     return (
         <div id="defaultLayout">
             <aside>
@@ -27,7 +34,7 @@ export default function DefaultLayout() {
                 </Link>
                 <br />
                 <Link to="/users">
-                    <span className="material-icons-outlined">account_circle</span> Users
+                    <span class="material-icons-outlined">account_circle</span> Users
                 </Link>
                 <br />
                 <Link to="/products">
@@ -35,7 +42,7 @@ export default function DefaultLayout() {
                     Products
                 </Link>
                 <br />
-                <Link to="/customers"><span className="material-icons-outlined">group</span> Customers</Link>
+                <Link to="/customers"><span class="material-icons-outlined">group</span> Customers</Link>
                 <br />
                 <Link to="/orders">
                     <span className="material-icons-outlined">
